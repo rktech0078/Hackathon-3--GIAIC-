@@ -3,7 +3,6 @@ import React from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 
-
 type Product = {
     id: string;
     imagePath: string;
@@ -22,18 +21,10 @@ type CardToastProps = {
 export default function CardToast({ fetchData }: CardToastProps) {
 
 
-
-
-
-
     const addToCart = (product: Product) => {
         const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
         myCart.push(product);
         localStorage.setItem("myCart", JSON.stringify(myCart));
-
-        // alert(
-        //     `${product.name} added to cart!`
-        // );
     };
 
 
@@ -71,3 +62,5 @@ export default function CardToast({ fetchData }: CardToastProps) {
         </div>
     );
 }
+
+

@@ -46,13 +46,13 @@ export default function Home() {
     )
   }
 
-  // const addToCart = (product: Product) => {
-  //   const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
-  //   myCart.push(product);
-  //   localStorage.setItem("myCart", JSON.stringify(myCart));
+  const addToCart = (product: Product) => {
+    const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
+    myCart.push(product);
+    localStorage.setItem("myCart", JSON.stringify(myCart));
 
-  //   alert(`${product.name} added to cart!`);
-  // };
+    alert(`${product.name} added to cart!`);
+  };
 
   return (
     <>
@@ -95,8 +95,8 @@ export default function Home() {
                   </div>
 
                   <div className='flex w-full gap-3'>
-                    {/* <button onClick={() => { addToCart(item) }} className="btn btn-outline mt-5 bg-slate-500 text-white">Add to Cart</button> */}
-                    <CardToast fetchData={{
+                    <button onClick={() => { addToCart(item) }} className="btn btn-outline mt-5 bg-slate-500 text-white">Add to Cart</button>
+                    {/* <CardToast fetchData={{
                       id: '',
                       imagePath: '',
                       name: '',
@@ -106,7 +106,7 @@ export default function Home() {
                       isFeaturedProduct: false,
                       stockLevel: 0,
                       category: ''
-                    }}/>
+                    }}/> */}
                     <Link href={`${item.id}`}><button className="btn btn-outline mt-5 ">Buy Now</button></Link>
                   </div>
 

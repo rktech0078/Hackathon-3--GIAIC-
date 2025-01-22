@@ -22,11 +22,17 @@ const Page = () => {
     const [myCart, setMyCart] = useState<Product[]>([]);
 
     useEffect(() => {
-        const storedCart = localStorage.getItem("myCart");
-        if (storedCart) {
-            setMyCart(JSON.parse(storedCart));
+        try {
+            const storedCart = localStorage.getItem("myCart");
+            if (storedCart) {
+                setMyCart(JSON.parse(storedCart));
+            }
+        } catch (error) {
+            console.error("Failed to load cart from localStorage:", error);
         }
     }, []);
+
+
 
     const handleDelete = (id: string) => {
         const updatedCart = myCart.filter((item) => item && item.id !== id); // Handle null/undefined items
@@ -65,13 +71,18 @@ const Page = () => {
                                     </th>
                                 </tr>
                             </thead>
+
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {myCart.map((item, index) =>
-                                    item ? ( // Check if item is valid
+                                {myCart.length === 0 ? (
+                                    <div className="text-center py-10 text-gray-500">
+                                        Your cart is empty. <Link href="/shop" className="text-blue-500">Start shopping!</Link>
+                                    </div>
+                                ) : (
+                                    myCart.map((item, index) => (
                                         <tr key={index}>
                                             <td className="px-6 py-4">
                                                 <Image
-                                                    src={item.imagePath}
+                                                    src={item.imagePath || "/images/logo.svg"}
                                                     alt={item.name}
                                                     width={100}
                                                     height={100}
@@ -94,7 +105,7 @@ const Page = () => {
                                                 </button>
                                             </td>
                                         </tr>
-                                    ) : null // Skip null/undefined items
+                                    ))
                                 )}
                             </tbody>
                         </table>

@@ -55,7 +55,7 @@ export default function Navbar() {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li><Link href={"/"}>Homepage</Link></li>
                             <li><Link href={"/shop"}>Shop</Link></li>
-                            <li><Link href={"/cart"}>Cart</Link></li>
+                            <li><Link href={"/myCart"}>Cart</Link></li>
                             <li><Link href={"/contacts"}>Contact</Link></li>
                             <li><Link href={"/studio"} target='_blank'>Sanity Studio</Link></li>
                         </ul>

@@ -4,18 +4,19 @@ import Instagram from "@/components/OLD HACKATHON/Home/Instagram";
 import NewArrival from "@/components/OLD HACKATHON/Home/NewArrival";
 import Sofa from "@/components/OLD HACKATHON/Home/sofa";
 import Table from "@/components/OLD HACKATHON/Home/table";
+// import DeleteToast from "@/components/Toast/DeleteToast";
 // import CardToast from "@/components/Toast/CartToast";
 // import TopPicks from "@/components/OLD HACKATHON/Home/TopPicks";
-
 export default function Page() {
   return (
     <>
       <div className="">
         <Sofa />
+        {/* <DeleteToast/> */}
         {/* <CardToast/> */}
         <Table />
         {/* <TopPicks /> */}
-        <Home/>
+        <Home />
         <NewArrival />
         <Blogs />
         <Instagram />
