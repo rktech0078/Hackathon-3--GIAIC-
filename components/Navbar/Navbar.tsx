@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import ClerkButton from '../clerk/ClerkSignIn';
@@ -16,7 +15,7 @@ type Product = {
     category: string
 }
 
-export default function Navbar(bgColor: any) {
+export default function Navbar() {
 
     const [myCart, setMyCart] = useState<Product[]>([]);
     useEffect(() => {
@@ -26,12 +25,15 @@ export default function Navbar(bgColor: any) {
         }
     }, []);
 
-    const totalPrice = myCart.reduce((acc, item) => acc + item.price, 0);
+    // const totalPrice = myCart.reduce((acc, item) => acc + item.price, 0);
+    const totalPrice = myCart.reduce((acc, item) => {
+        return item ? acc + item.price : acc; // Null or undefined items ko skip karna
+    }, 0);
 
 
     return (
         <>
-            <div className={`navbar bg-base-100 border-b-2 md:p-5 ${bgColor}`}>
+            <div className={`navbar bg-base-100 border-b-2 md:p-5`}>
                 <div className="navbar-start w-full">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

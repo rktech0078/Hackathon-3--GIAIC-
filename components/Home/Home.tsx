@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { Cards3 } from '../Cards/Cards';
+import CardToast from '../Toast/CartToast';
 
 async function getData() {
   const fetchData = await client.fetch("*[_type == 'data']{imagePath, id, stockLevel, name, price, description, category}");
@@ -45,13 +46,13 @@ export default function Home() {
     )
   }
 
-  const addToCart = (product: Product) => {
-    const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
-    myCart.push(product);
-    localStorage.setItem("myCart", JSON.stringify(myCart));
+  // const addToCart = (product: Product) => {
+  //   const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
+  //   myCart.push(product);
+  //   localStorage.setItem("myCart", JSON.stringify(myCart));
 
-    alert(`${product.name} added to cart!`);
-  };
+  //   alert(`${product.name} added to cart!`);
+  // };
 
   return (
     <>
@@ -68,7 +69,7 @@ export default function Home() {
 
         {
           data.map((item) => (
-            <div className=''>
+            <div  className=''>
               <div className="card bg-base-100 w-full shadow-xl">
                 <figure>
                   <Link href={`${item.id}`}>
@@ -94,7 +95,8 @@ export default function Home() {
                   </div>
 
                   <div className='flex w-full gap-3'>
-                    <button onClick={() => { addToCart(item) }} className="btn btn-outline mt-5 bg-slate-500 text-white">Add to Cart</button>
+                    {/* <button onClick={() => { addToCart(item) }} className="btn btn-outline mt-5 bg-slate-500 text-white">Add to Cart</button> */}
+                    <CardToast/>
                     <Link href={`${item.id}`}><button className="btn btn-outline mt-5 ">Buy Now</button></Link>
                   </div>
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { Cards3 } from '@/components/Cards/Cards';
+import CardToast from '@/components/Toast/CartToast';
 import { client } from '@/sanity/lib/client';
 import Image from 'next/image';
 
@@ -72,7 +73,7 @@ const page = async (props: Props) => {
         //             src={imagePath}
         //             alt={name}
         //             className="w-full h-auto rounded-lg hover:opacity-80 transition-opacity"
-                // />
+        // />
         //     </div>
         //     <h1 className="text-2xl font-bold text-gray-800 mb-2">{name}</h1>
         //     <p className="text-gray-600 mb-4">{description}</p>
@@ -261,10 +262,12 @@ const page = async (props: Props) => {
                                     <h1 className="title-font font-medium text-2xl text-gray-900">
                                         ${price} <span className='text-red-500 font-bold'>({discountPercentage}% OFF)</span>
                                     </h1>
-                                    <button onClick={() => { addToCart(fetchData) }} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+
+                                    {/* <button onClick={() => { addToCart(fetchData) }} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                                         Add to Cart
-                                    </button>
-                                    <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center  ml-4 text-red-500 hover:bg-red-500 hover:text-white">
+                                    </button> */}
+                                    <CardToast />
+                                    <button className="rounded-full mt-6 w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center  ml-4 text-red-500 hover:bg-red-500 hover:text-white">
                                         <svg
                                             fill="currentColor"
                                             strokeLinecap="round"

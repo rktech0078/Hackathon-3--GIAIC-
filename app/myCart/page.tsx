@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 
 
@@ -39,7 +40,10 @@ const Page = () => {
         // alert("Item removed from cart");
     };
 
-    const totalPrice = myCart.reduce((acc, item) => acc + item.price, 0);
+    // const totalPrice = myCart.reduce((acc, item) => acc + item.price, 0);
+    const totalPrice = myCart.reduce((acc, item) => {
+        return item ? acc + item.price : acc; // Null or undefined items ko skip karna
+    }, 0);
 
 
     return (
@@ -110,6 +114,7 @@ const Page = () => {
                                         </th>
                                     </tr>
                                 </thead>
+
                                 {myCart.map((item, index) => (
                                     <tbody key={index} className="bg-white divide-y divide-gray-200">
                                         <tr>
@@ -147,9 +152,11 @@ const Page = () => {
                                 <span>Total</span>
                                 <span className="text-yellow-600">{totalPrice.toFixed(2)}</span>
                             </div>
-                            <button className="mt-6 w-full bg-yellow-500 text-white py-2 px-4 rounded-md font-bold hover:bg-yellow-600">
-                                Proceed to Checkout
-                            </button>
+                            <Link href={"/contacts"}>
+                                <button className="mt-6 w-full bg-yellow-500 text-white py-2 px-4 rounded-md font-bold hover:bg-yellow-600">
+                                    Proceed to Checkout
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -167,7 +174,7 @@ const Page = () => {
 
 
 
-            
+
 
         </>
     )

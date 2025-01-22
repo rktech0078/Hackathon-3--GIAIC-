@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import { Provider } from "@/components/ui/provider";
 
 
 import {
@@ -53,8 +52,8 @@ export default function RootLayout({
       {/* SignedIn Layout */}
       <SignedIn>
         <div className="min-h-screen flex flex-col">
-          <Navbar bgColor="bg-yellow-300" />
-          <Provider>{children}</Provider>
+          <Navbar />
+          {children}
           <Footer />
         </div>
       </SignedIn>
