@@ -1,4 +1,5 @@
 import { client } from '@/sanity/lib/client';
+import Image from 'next/image';
 
 type Product = {
     id: string;
@@ -53,7 +54,7 @@ const page = async (props: Props) => {
     return (
         <div>
             <div>
-                <img src={imagePath} alt={name} style={{ maxWidth: '300px' }} />
+                <Image src={imagePath} alt={name} width={100} height={100} style={{ maxWidth: '300px' }} />
             </div>
             <h1>{name}</h1>
             <p>{description}</p>

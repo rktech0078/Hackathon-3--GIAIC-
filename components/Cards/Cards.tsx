@@ -7,9 +7,11 @@ export default function Cards() {
             <div>
                 <div className="card bg-base-100 w-96 shadow-xl">
                     <figure>
-                        <img
+                        <Image
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                            alt="Shoes"
+                            width={100}
+                            height={100} />
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">
@@ -34,7 +36,7 @@ type Head = {
 }
 
 
-export function Cards2({ head, subHead }: Head) {
+export function Cards2({ head }: Head) {
     return (
         <div>
 

@@ -8,10 +8,8 @@ import Footer from "@/components/Footer/Footer";
 import {
   ClerkProvider,
   SignIn,
-  SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
 } from '@clerk/nextjs'
 
 

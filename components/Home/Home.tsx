@@ -68,8 +68,8 @@ export default function Home() {
 
 
         {
-          data.map((item) => (
-            <div  className=''>
+          data.map((item, index) => (
+            <div  key={index} className=''>
               <div className="card bg-base-100 w-full shadow-xl">
                 <figure>
                   <Link href={`${item.id}`}>

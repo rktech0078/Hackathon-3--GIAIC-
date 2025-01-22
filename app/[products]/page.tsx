@@ -55,15 +55,15 @@ const page = async (props: Props) => {
     }: Product = fetchData;
 
 
-    const addToCart = (product: Product) => {
-        const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
-        myCart.push(product);
-        localStorage.setItem("myCart", JSON.stringify(myCart));
+    // const addToCart = (product: Product) => {
+    //     const myCart: Product[] = JSON.parse(localStorage.getItem("myCart") || "[]");
+    //     myCart.push(product);
+    //     localStorage.setItem("myCart", JSON.stringify(myCart));
 
-        alert(
-            `${product.name} added to cart!`
-        );
-    };
+    //     alert(
+    //         `${product.name} added to cart!`
+    //     );
+    // };
 
 
     return (

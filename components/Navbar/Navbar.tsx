@@ -56,7 +56,7 @@ export default function Navbar() {
                             <li><Link href={"/"}>Homepage</Link></li>
                             <li><Link href={"/shop"}>Shop</Link></li>
                             <li><Link href={"/cart"}>Cart</Link></li>
-                            <li><Link href={"/"}>Contact</Link></li>
+                            <li><Link href={"/contacts"}>Contact</Link></li>
                             <li><Link href={"/studio"} target='_blank'>Sanity Studio</Link></li>
                         </ul>
                     </div>

@@ -16,7 +16,11 @@ type Product = {
     category: string;
 };
 
-export default function CardToast({ fetchData }: any) {
+type CardToastProps = {
+    fetchData: Product; // Specify the expected type here
+};
+export default function CardToast({ fetchData }: CardToastProps) {
+
 
 
 
