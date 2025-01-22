@@ -96,7 +96,17 @@ export default function Home() {
 
                   <div className='flex w-full gap-3'>
                     {/* <button onClick={() => { addToCart(item) }} className="btn btn-outline mt-5 bg-slate-500 text-white">Add to Cart</button> */}
-                    <CardToast/>
+                    <CardToast fetchData={{
+                      id: '',
+                      imagePath: '',
+                      name: '',
+                      price: 0,
+                      description: '',
+                      discountPercentage: 0,
+                      isFeaturedProduct: false,
+                      stockLevel: 0,
+                      category: ''
+                    }}/>
                     <Link href={`${item.id}`}><button className="btn btn-outline mt-5 ">Buy Now</button></Link>
                   </div>
 
