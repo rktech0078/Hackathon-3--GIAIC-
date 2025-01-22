@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { Cards3 } from '../Cards/Cards';
-import CardToast from '../Toast/CartToast';
 
 async function getData() {
   const fetchData = await client.fetch("*[_type == 'data']{imagePath, id, stockLevel, name, price, description, category}");
